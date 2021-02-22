@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import '../assets/styles/pages/Home.scss';
 import { getWheater, getWheaterForecast, getWheaterLocation} from '../redux/actions/dataActions';
 
+import Banner from '../components/Banner';
 
 const Home = (props) => {
   const { data, dataForecast, dataLocation, loading, error} = props;
@@ -35,7 +36,13 @@ const Home = (props) => {
     return (
       <div className='home'>
         <div className='home__container'>
-         
+        {data.lenght!=0 && 
+             <Banner 
+             city={data.name}
+             country={data.sys.country}
+             description={data.weather[0].description}
+           />
+          }
 
         </div>
       </div>

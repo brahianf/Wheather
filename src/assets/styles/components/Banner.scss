@@ -1,0 +1,49 @@
+@import '../vars';
+.banner{
+  width: 100%;
+  height: 300px;
+  border-radius: 22px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  // object-fit: cover;
+  z-index: 1;
+  transition: .4s;
+  @media (max-width: 980px) {
+    height: 200px;
+  }
+  @media (max-width: 599px) {
+    height: 120px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  &__detail{
+    position: absolute;
+    top: 90px;
+    left: 70px;
+    display: flex;
+    flex-direction: row;
+    transition: .4s;
+    @media (max-width: 980px) {
+      transition: .4s;
+      top: 120px;
+      left: 120px;
+    }
+    @media (max-width: 599px) {
+      top: 60px;
+    }
+    & img {
+      width: 20px;
+      height: 26px;
+      margin: 0 6px;
+    }
+    & p{
+     color: $color-secundary;
+     margin: 0 6px;
+     font-size: 18px;
+     font-weight: bold;
+    }
+  }
+}
+
