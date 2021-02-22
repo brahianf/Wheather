@@ -112,6 +112,33 @@
         width: 90%;
       }
     }
+
+    &--locations{
+      // width: 20%;
+      height: 100%;
+      z-index: 4;
+      margin: -140px 0 0 0;
+      @media (max-width: 1380px) {
+        margin: 0 auto;
+        margin-top: 20px;
+        height: 80%;
+      }
+      @media (max-width: 767px) {
+        height: 60%;
+      }
+    }
     
+  }
+}
+
+@keyframes Moving {
+  from {
+    margin-left: 50%;
+    width: 100%
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
   }
 }

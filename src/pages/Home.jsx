@@ -9,6 +9,8 @@ import Forecast from '../components/Forecast';
 import Visit from '../components/Visit';
 import shawarma from '../assets/img/shawarma.jpg';
 import musseum from '../assets/img/Art_Science_Museum.jpg';
+import Location from '../components/Location';
+import AddLocation from '../components/AddLocation';
 
 const Home = (props) => {
   const { data, dataForecast, dataLocation, loading, error} = props;
@@ -79,6 +81,14 @@ const Home = (props) => {
             <div className='home__container--visit-item3'>
               <Visit city={"Fountain of south"} img={musseum}/>
             </div>
+          </div>
+
+          <div className='home__container--locations'>
+            {dataLocation.lenght!=0 && 
+              dataLocation.map((data, index) => (
+                <Location data={data} key={index} />
+            ))}
+            <AddLocation/>
           </div>
 
         </section>
