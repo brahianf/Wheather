@@ -6,6 +6,22 @@ import { getWheater, getWheaterForecast, getWheaterLocation} from '../redux/acti
 
 const Home = (props) => {
   const { data, dataForecast, dataLocation, loading, error} = props;
+
+  const getData = async (nameCity) => {
+    await props.getWheater(nameCity);
+    await props.getWheaterForecast(nameCity);
+  };
+
+  const getDataLocation = async (nameCity) => {
+    await props.getWheaterLocation(nameCity);
+  };
+
+
+  useEffect(() => {
+    getData('bogota');
+    getDataLocation('paris');
+    getDataLocation('lyon');
+  }, [data.lenght]);
   
   if(loading || data==undefined){
     return (
