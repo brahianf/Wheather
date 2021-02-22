@@ -13,7 +13,7 @@ export const getWheater = (nameCity) => async (dispatch) => {
           payload: data,
         });
       })
-      .catch(err => console.error(`Error ${err.message}`))
+      .catch(err => console.error(`Error ${err}`))
   } catch (error) {
     console.error('getWheater -> err', error);
   }
@@ -43,7 +43,7 @@ export const getWheaterLocation = (nameCity) => async (dispatch) => {
           payload: data,
         });
       })
-      .catch(err => console.error(`Error ${err.message}`))
+      .catch(err => console.error(`Error ${err}`))
   } catch (error) {
     console.error('getWheaterLocation -> err', error);
   }
