@@ -1,0 +1,39 @@
+@import '../vars';
+@import '../functions.scss';
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 70px;
+  background-color: $color-white;
+  border-top: 1px solid  get-opacity($color-secundary, 0.5);
+  border-radius: 20px 20px 0 0;
+  color: $color-secundary;
+  ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    li {
+      margin: 0 10px;
+      display: flex;
+      align-items: center;
+      a {
+        text-decoration: none;
+        color: $color-black;
+        font-weight: 600;
+        & img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+    font-weight: 600;
+  }
+}
