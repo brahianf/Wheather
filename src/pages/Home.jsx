@@ -4,6 +4,7 @@ import '../assets/styles/pages/Home.scss';
 import { getWheater, getWheaterForecast, getWheaterLocation} from '../redux/actions/dataActions';
 
 import Banner from '../components/Banner';
+import Weather from '../components/Weather';
 
 const Home = (props) => {
   const { data, dataForecast, dataLocation, loading, error} = props;
@@ -42,7 +43,13 @@ const Home = (props) => {
              country={data.sys.country}
              description={data.weather[0].description}
            />
-          }
+        }
+        {data.lenght!=0 && 
+          <Weather 
+            temp={data.main.temp} 
+            wheater={data.weather[0]}
+          />
+        }
 
         </div>
       </div>
