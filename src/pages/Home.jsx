@@ -6,6 +6,9 @@ import { getWheater, getWheaterForecast, getWheaterLocation} from '../redux/acti
 import Banner from '../components/Banner';
 import Weather from '../components/Weather';
 import Forecast from '../components/Forecast';
+import Visit from '../components/Visit';
+import shawarma from '../assets/img/shawarma.jpg';
+import musseum from '../assets/img/Art_Science_Museum.jpg';
 
 const Home = (props) => {
   const { data, dataForecast, dataLocation, loading, error} = props;
@@ -39,11 +42,11 @@ const Home = (props) => {
       <div className='home'>
         <div className='home__container'>
         {data.lenght!=0 && 
-             <Banner 
-             city={data.name}
-             country={data.sys.country}
-             description={data.weather[0].description}
-           />
+          <Banner 
+          city={data.name}
+          country={data.sys.country}
+          description={data.weather[0].description}
+          />
         }
         {data.lenght!=0 && 
           <Weather 
@@ -54,17 +57,30 @@ const Home = (props) => {
 
         <section className='home__container--section'>
           <div className='home__container--forecast'>
-              <p className='home__container--forecast-title'><b>3 Days</b> Forecast</p>
-              <Forecast 
-                date={dataForecast.list}
-              />
-              <Forecast 
-                date={dataForecast.list}
-              />
-              <Forecast 
-                date={dataForecast.list}
-              />
+            <p className='home__container--forecast-title'><b>3 Days</b> Forecast</p>
+            <Forecast 
+              date={dataForecast.list}
+            />
+            <Forecast 
+              date={dataForecast.list}
+            />
+            <Forecast 
+              date={dataForecast.list}
+            />
           </div>
+
+          <div className='home__container--visit-grid'>
+            <div className='home__container--visit-item1'>
+              <Visit city={"Arab Street singapore"} img={shawarma}/>
+            </div>
+            <div className='home__container--visit-item2'>
+              <Visit city={"Art Science Museeum"} img={shawarma}/>
+            </div>
+            <div className='home__container--visit-item3'>
+              <Visit city={"Fountain of south"} img={musseum}/>
+            </div>
+          </div>
+
         </section>
 
         </div>
