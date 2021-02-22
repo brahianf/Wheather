@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/styles/components/Header.scss';
+import Search from './SearchHeader';
 
 const Header = (props) => {
 
@@ -9,7 +10,7 @@ const Header = (props) => {
       <Link className='header__brand' to='/'>
         <p>🌥   Weather  </p>
       </Link>
-      <input placeholder='Buscar Ciudad'></input>
+      <Search />
       <div className='header__button'>
         <p>User</p>
       </div>
