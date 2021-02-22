@@ -5,6 +5,7 @@ import { getWheater, getWheaterForecast, getWheaterLocation} from '../redux/acti
 
 import Banner from '../components/Banner';
 import Weather from '../components/Weather';
+import Forecast from '../components/Forecast';
 
 const Home = (props) => {
   const { data, dataForecast, dataLocation, loading, error} = props;
@@ -50,6 +51,21 @@ const Home = (props) => {
             wheater={data.weather[0]}
           />
         }
+
+        <section className='home__container--section'>
+          <div className='home__container--forecast'>
+              <p className='home__container--forecast-title'><b>3 Days</b> Forecast</p>
+              <Forecast 
+                date={dataForecast.list}
+              />
+              <Forecast 
+                date={dataForecast.list}
+              />
+              <Forecast 
+                date={dataForecast.list}
+              />
+          </div>
+        </section>
 
         </div>
       </div>

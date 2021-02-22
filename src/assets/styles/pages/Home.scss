@@ -23,5 +23,44 @@
     @media (max-width: 767px) {
       padding: 20px 20px;
     }
+
+    
+    &--section{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 24px;
+      animation-duration: 3s;
+      animation-name: Moving;
+      box-sizing: border-box;
+      @media (max-width: 767px) {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &--forecast{
+      height: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 10px 0 0;
+      transition: .3s;
+      &-title{
+        color: black;
+        font-size: 22px;
+        margin: 0 10px;
+      }
+      @media (max-width: 980px) {
+        width: 60%;
+        margin: 0 auto;
+        transition: .3s;
+      }
+      @media (max-width: 767px) {
+        width: 80%;
+      }
+    }
   }
 }

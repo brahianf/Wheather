@@ -1,0 +1,44 @@
+@import '../vars.scss';
+@import '../functions.scss';
+.Forecast{
+  margin: 10px;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 22px;
+  border: .8px solid  get-opacity($color-secundary, 0.3);
+  box-shadow: 10px 10px 10px 1px get-opacity($color-secundary,0.2);
+  transition: .4s;
+  @media (max-width: 767px) {
+    height: 50px;
+    margin: 5px;
+  }
+  &:hover{
+    transition: .4s;
+    transform: scale(1.06);
+  }
+  & img {
+    text-align: center;
+    align-items: center;
+    width: 30%;
+  }
+
+  &__day{
+    text-align: left;
+  }
+  &__temp{
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: $color-aux;
+    border-radius: 22px;
+    height: 100%;
+    border: .4px solid get-opacity($color-secundary,.3);
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
