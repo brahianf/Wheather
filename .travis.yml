@@ -1,0 +1,31 @@
+language: node_js
+# os: osx
+cache:
+  directories:
+    - ~/.npm
+    - node_modules
+node_js:
+  - '12'
+git:
+  depth: 3
+branches:
+  except:
+  - develop
+branches:
+  only:
+  - master
+notifications:
+  email:
+    recipients:
+      - brahianf.hurtado@gmail.com
+    on_success: always
+    on_failure: always
+before_deploy:
+  - npm install netlify-cli -g
+  - yarn build
+deploy:
+  provider: script
+  edge: true
+  script: netlify deploy --dir=dist --prod --message="$TRAVIS_COMMIT_MESSAGE"
+  on:
+    branch: master
