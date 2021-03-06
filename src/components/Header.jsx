@@ -12,7 +12,7 @@ const Header = (props) => {
       </Link>
       <Search />
       <div className='header__button'>
-        <p>User</p>
+        <button>Login</button>
       </div>
     </header>
   );
