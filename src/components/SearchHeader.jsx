@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { getWheater } from '../redux/actions/dataActions';
+import { getWheater, getWheaterForecast } from '../redux/actions/dataActions';
 import searchIcon from '../assets/img/search-icon.svg';
 
 const Search = (props) => {
@@ -15,6 +15,7 @@ const Search = (props) => {
 
   const handleClick = async () => {
     await props.getWheater(keyName);
+    await props.getWheaterForecast(keyName);
   };
 
   return (
@@ -36,7 +37,7 @@ const Search = (props) => {
         }}
         name='seeker'
         id=''
-        placeholder='Buscar Ciudad'
+        placeholder='Search City'
         value={search.seeker}
       />
 
@@ -54,7 +55,8 @@ const Search = (props) => {
 const mapStateToProps = ({ dataReducer }) => dataReducer;
 
 const mapDispatchToProps = {
-  getWheater
+  getWheater,
+  getWheaterForecast  
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));
