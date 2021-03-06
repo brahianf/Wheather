@@ -46,7 +46,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      margin: 0 10px 0 0;
+      // margin: 10px 10px 10px 0;
+      margin: 10px auto;
       transition: .3s;
       &-title{
         color: black;
@@ -54,24 +55,42 @@
         margin: 0 10px;
       }
       @media (max-width: 980px) {
-        width: 60%;
-        margin: 0 auto;
-        transition: .3s;
+        width: 50%;
       }
       @media (max-width: 767px) {
+        width: 60%;
+        transition: .3s;
+      }
+      @media (max-width: 599px) {
         width: 80%;
+        font-size: 16px;
       }
     }
 
-    
     &--visit{
       height: 100%;
       width: 40%;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      @media (max-width: 1275px) {
+        width: 60%;
+      }
+      @media (max-width: 767px) {
+        width: 80%;
+        transition: .3s;
+      }
+      @media (max-width: 599px) {
+        width: 100%;
+        font-size: 16px;
+      }
       & p:nth-child(1) {
         color: black;
         font-size: 22px;
-        margin: 0 10px;
+        margin: 10 0;
+        height: min-content;
+        text-align: center;
       }
       & div:nth-child(1){
         display: flex;
@@ -90,10 +109,18 @@
         grid-template-rows: none;
         gap: 20px 20px;
         height: 300px;
+        margin: 0 auto;
+        transition: .3s;
+        @media (max-width: 1275px) {
+          width: 100%;
+        }
         @media (max-width: 767px) {
-          height: 240px;
-          width: 90%;
-          margin: 0 auto;
+          transition: .3s;
+          height: 340px;
+          width: 80%;
+        }
+        @media (max-width: 599px) {
+          width: 100%;
         }
       }
       &-item1{
@@ -114,17 +141,16 @@
     }
 
     &--locations{
-      // width: 20%;
       height: 100%;
       z-index: 4;
-      margin: -140px 0 0 0;
-      @media (max-width: 1380px) {
-        margin: 0 auto;
+      margin: -140px auto 0;
+      @media (max-width: 1275px) {
         margin-top: 20px;
-        height: 80%;
+        width: 50%;
       }
-      @media (max-width: 767px) {
-        height: 60%;
+      @media (max-width: 599px) {
+        margin: 20px auto;
+        width: 70%;
       }
     }
     
