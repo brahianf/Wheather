@@ -1,9 +1,11 @@
 @import '../vars';
+@import '../functions.scss';
+
 .banner{
   width: 100%;
   height: 300px;
   border-radius: 22px;
-  background-size: 100% 100%;
+  // background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: center;
@@ -22,8 +24,11 @@
     position: absolute;
     top: 90px;
     left: 70px;
+    padding: 5px 10px;
     display: flex;
     flex-direction: row;
+    background-color: get-opacity($color-main, 0.6);
+    border-radius: 10px;
     transition: .4s;
     @media (max-width: 980px) {
       transition: .4s;
@@ -39,10 +44,16 @@
       margin: 0 6px;
     }
     & p{
-     color: $color-secundary;
-     margin: 0 6px;
-     font-size: 18px;
-     font-weight: bold;
+      color: $color-white;
+      margin: 0 6px;
+      font-size: 24px;
+      font-weight: bold;
+      @media (max-width: 980px) {
+        font-size: 20px;
+      }
+      @media (max-width: 599px) {
+        font-size: 16px;
+      }
     }
   }
 }
