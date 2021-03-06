@@ -2,7 +2,7 @@ import React from 'react';
 import '../assets/styles/components/Location.scss';
 
 const Location = (props) => {
-  const { data} = props;
+  const { data } = props;
   const codeIcon= data.weather[0].icon;
   const urlIcon=`http://openweathermap.org/img/wn/${codeIcon}@2x.png`;
   return (
@@ -11,13 +11,15 @@ const Location = (props) => {
         <div>
           <img src={urlIcon}/>
         </div>
-        <p>{Math.trunc(data.main.temp)} °</p>
-        <p>&nbsp; {data.name}<br/>{data.sys.country}</p>
+        <div>
+          <p><b>{Math.trunc(data.main.temp)} °</b></p>
+          <p><b>{data.name}, &nbsp;{data.sys.country}</b></p>
+        </div>
       </div>
       <div className='location__wind'>
         {/* <p>{wheater.main}</p> */}
-        <p>Humidity &nbsp; {data.main.humidity}</p>
-        <p>{data.wind.speed}&nbsp;Km/h</p>
+        <p>💦Humidity &nbsp; {data.main.humidity}%</p>
+        <p>💨{data.wind.speed}&nbsp;Km/h</p>
       </div>
     </div>
   );

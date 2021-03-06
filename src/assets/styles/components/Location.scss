@@ -3,20 +3,18 @@
 .location{
   display: flex;
   flex-direction: column;
-  margin: 8px 0;
+  margin: 8px auto;
   padding: 0 4px 4px 0;
   border-radius: 22px;
   border: .8px solid  get-opacity($color-secundary, 0.3);
   box-shadow: 10px 10px 10px 1px get-opacity($color-secundary,0.2);
   background-color: $color-white;
   transition: .4s;
-  width: 330px;
+  width: 90%;
   height: 130px;
   @media (max-width: 980px) {
     height: 100px;
-  }
-  @media (max-width: 767px) {
-    height: 80px;
+    width: 100%;
   }
   &__detail{
     display: flex;
@@ -32,7 +30,6 @@
       width: 30%;
       border: .4px solid get-opacity($color-secundary,.3);
       font-size: 12px;
-      font-weight: bold;
       @media (max-width: 767px) {
         width: 20%;
       }
@@ -47,17 +44,20 @@
         }
       }
     }
-    & p:nth-child(2) {
-      margin: 0 auto;
-      font-size: 22px;
-    }
-    & p {
-      margin: 0 auto;
-      color: black;
-      font-size: 16px;
-      font-weight: bold;
-      @media (max-width: 767px) {
-        font-size: 14px;
+    & div:nth-child(2) {
+      width: 100%;
+      padding: 6px;
+      & p {
+        margin: 0px auto;
+        color: black;
+        font-size: 16px;
+        @media (max-width: 767px) {
+          font-size: 14px;
+        }
+      }
+      & p:nth-child(3) {
+        margin: 0px auto;
+        font-size: 18px;
       }
     }
   }
