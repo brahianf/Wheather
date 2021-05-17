@@ -6,7 +6,9 @@ const API_KEY = config.weatherAppId;
 
 export const getWheater = (nameCity) => async (dispatch) => {
   try {
-    const data = await fetchData(`${URL_API}weather?q=${nameCity}&units=metric&appid=${API_KEY}`)
+    // const data = await fetchData(`${URL_API}weather?q=${nameCity}&units=metric&appid=${API_KEY}`);
+    const response = await fetch(`${URL_API}weather?q=${nameCity}&units=metric&appid=${API_KEY}`);
+    const data = await response.json();
     dispatch({
       type: 'DATA',
       payload: data,
@@ -18,7 +20,9 @@ export const getWheater = (nameCity) => async (dispatch) => {
 
 export const getWheaterForecast = (nameCity) => async (dispatch) => {
   try {
-    const data = await fetchData(`${URL_API}forecast?q=${nameCity}&units=metric&cnt=24&appid=${API_KEY}`)
+    // const data = await fetchData(`${URL_API}forecast?q=${nameCity}&units=metric&cnt=24&appid=${API_KEY}`);
+    const response = await fetch(`${URL_API}forecast?q=${nameCity}&units=metric&cnt=24&appid=${API_KEY}`);
+    const data = await response.json();
     dispatch({
       type: 'DATA_FORECAST',
       payload: data,
@@ -30,7 +34,9 @@ export const getWheaterForecast = (nameCity) => async (dispatch) => {
 
 export const getWheaterLocation = (nameCity) => async (dispatch) => {
   try {
-    const data = await fetchData(`${URL_API}weather?q=${nameCity}&units=metric&appid=${API_KEY}`);
+    // const data = await fetchData(`${URL_API}weather?q=${nameCity}&units=metric&appid=${API_KEY}`);
+    const response = await fetch(`${URL_API}weather?q=${nameCity}&units=metric&appid=${API_KEY}`);
+    const data = await response.json();
     dispatch({
       type: 'DATA_LOCATION',
       payload: data,
