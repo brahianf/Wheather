@@ -1,8 +1,8 @@
 const { config } = require('../../config/index');
 import { fetchData } from '../../utils/fetchData.js'
 
-const URL_API = config.URL_API;
-const API_KEY = config.weatherAppId;
+const URL_API = process.env.URL_API;
+const API_KEY = process.env.API_KEY;
 
 export const getWheater = (nameCity) => async (dispatch) => {
   try {
