@@ -23,7 +23,7 @@
   "author": "Brahianf Hurtado <brahianf@unicauca.edu.co>",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^4.5.2",
+    "bootstrap": "^4.6.1",
     "dotenv": "^8.6.0",
     "dotenv-webpack": "^6.0.4",
     "react": "^16.13.1",
